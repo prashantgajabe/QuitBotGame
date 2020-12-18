@@ -1,0 +1,20 @@
+<div *ngIf="isDataAvailable" class="container vertical-center">
+    <div class="justify-content-center">
+        <div class="godimagebox">
+            <div class="row">
+                <img class="col-1" src="http://localhost:8000/images/{{currentPiclist[0].PicLink}}">
+                <img class="col-2" src="http://localhost:8000/images/{{currentPiclist[1].PicLink}}">
+            </div>
+            <div class="row">
+                <img class="col-1" src="http://localhost:8000/images/{{currentPiclist[2].PicLink}}">
+                <img class="col-2" src="http://localhost:8000/images/{{currentPiclist[3].PicLink}}">
+            </div>
+        </div>
+        <div class="answerbox">
+            <label *ngFor="let word of answer; index as i" class="wordbox" size="1" id="wordbox{{i}}" (click)="deleteletter()">-</label>
+        </div>
+        <div class="letterbox">
+            <button class="p m-1" *ngFor="let word of randomstring; index as i" (click)="letterclick(word, i)" id="letter{{i}}">{{word}}</button>
+        </div>
+    </div>
+</div>

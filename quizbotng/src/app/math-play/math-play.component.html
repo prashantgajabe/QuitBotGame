@@ -1,0 +1,29 @@
+<div *ngIf="isDataAvailable" class="container vertical-center">
+    <div class=" justify-content-center">
+        <div class="godimage d-flex flex-row">
+            <img src="http://localhost:8000/mathrid/{{currentRiddle.MathRiddle}}" alt="Riddle" style='max-height:"550px";'>
+        </div>
+        <div class="inputarea flex-row">
+            <div class="flex-row">
+                <input class="form-control form-control-lg m-2" type="text" name="anserbox" id="answerbox" disabled>
+                <button class="m-2">Hint</button>
+                <button class="m-2" (click) = "enterclick()">Enter</button>
+                <button class="m-2" (click) = "clearclick()">Clear</button>
+            </div>
+            <div class="flex-row">
+                <button class="m-2" (click)="insertedvalue(1)">1</button>
+                <button class="m-2" (click)="insertedvalue(2)">2</button>
+                <button class="m-2" (click)="insertedvalue(3)">3</button>
+                <button class="m-2" (click)="insertedvalue(4)">4</button>
+                <button class="m-2" (click)="insertedvalue(5)">5</button>
+            </div>
+            <div class="flex-row">
+                <button class="m-2" (click)="insertedvalue(6)">6</button>
+                <button class="m-2" (click)="insertedvalue(7)">7</button>
+                <button class="m-2" (click)="insertedvalue(8)">8</button>
+                <button class="m-2" (click)="insertedvalue(9)">9</button>
+                <button class="m-2" (click)="insertedvalue(0)">0</button>
+            </div>
+        </div>
+    </div>
+</div>

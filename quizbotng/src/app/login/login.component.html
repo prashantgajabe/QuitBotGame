@@ -1,0 +1,31 @@
+<title>QuizBot | Login</title>
+<link rel="shortcut icon" href="../../assets/img/favicon.ico">
+<div class="container vertical-center">
+    <div class="container col-lg-6 col-md-10 sm-12">
+        <legend class="m-3 h1">Login</legend>
+        <form [formGroup]="loginForm" (submit)="loginAcc(loginForm.value)">
+            <fieldset class="d-flex flex-row">
+                <input class="m-3 form-control form-control-lg" type="text" formControlName="Username" name="Username" id="Username" placeholder="Username">
+                <div *ngIf="loginForm.value.Username.invalid && (loginForm.value.Username.dirty || loginForm.value.Username.touched)" class="alert alert-danger">
+                    
+                <div *ngIf="loginForm.value.Username.errors.required">
+                    Please Input Username
+                </div>
+                <div *ngIf="loginForm.value.Username.errors.minlength">
+                    The minimum length of the Username should be 4 Characters
+                </div>
+                <div *ngIf="loginForm.value.Username.errors.forbiddenName">
+                    No Special Characters Allowed
+                </div>
+            </div>
+            </fieldset>
+            <fieldset class="d-flex flex-row">
+                <input class="m-3 form-control form-control-lg" type="password" formControlName="Password" name="Password" id="Password" placeholder="Password">
+            </fieldset>
+            <div class="m-3 d-flex flex-row quizlogohome">
+                <button type="submit" value="submit" name="l">Login</button>
+            </div>
+            <legend class="m-3 pt-4 h5">New user? Create a new account today! </legend><button class="m-3" (click)="singupbtn()">Sign-up</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="page-header" id="banner">
+      <div class="row">   
+        <div class="col-lg-12">  &nbsp;
+          <h1>{{title}}</h1>  &nbsp;
+        </div>
+      </div>
+    </div>
+  <div class="row">
+    <div class="container col-lg-8 col-md-10 col-sm-12 col-xs-12">
+      <div class=" col-xs-12 col-lg-12 col-lg-offset-1 border-primary">
+        <h3 class="card-header" id="h3quizquestion">Loading Question</h3>
+        <div class="card-body">
+          <h5 class="card-subtitle text-muted font-italic" id="h5quizdetail">Loading Details</h5>
+          <!-- <img style="width: 250px;" src="{{currentFood.Src}}" alt="Card image"/> -->
+        </div>
+        <div class="card-body">
+          <h4 class="card-title op1" style="cursor: pointer;" id="Op1" (click)="OptionClicked($event)">Loading Options</h4>
+          <h4 class="card-title op2" style="cursor: pointer;" id="Op2" (click)="OptionClicked($event)">Loading Options</h4>
+          <h4 class="card-title op3" style="cursor: pointer;" id="Op3" (click)="OptionClicked($event)">Loading Options</h4>
+          <h4 class="card-title op4" style="cursor: pointer;" id="Op4" (click)="OptionClicked($event)">Loading Options</h4>
+        </div>
+        <div class="card-body">
+          <a class="pull-left btn btn-danger" *ngIf="dataloaded && (currentQuiz.idQuiz>1)" href="/quizplay/{{currentQuiz.idQuiz-1}}">Previous</a>
+          &nbsp;
+          <button class="pull-right btn btn-primary" *ngIf="dataloaded" href="#" (click)="CheckAnswer()" style="margin-right:15px;">Submit</button>
+          <a class="pull-right btn btn-primary" *ngIf="dataloaded" href="/quizplay/{{currentQuiz.idQuiz+1}}" style="margin-right:15px;">Next</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <app-footer></app-footer> -->

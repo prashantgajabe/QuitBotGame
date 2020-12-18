@@ -1,19 +1,26 @@
 {
   "name": "quizbotgame",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
+  "main": "server.js",
   "scripts": {
     "start": "node ./bin/www"
   },
   "dependencies": {
     "@angular/cli": "^10.1.6",
+    "anime": "^0.1.2",
+    "animejs": "^3.2.1",
     "body-parser": "^1.19.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "^4.16.4",
     "http-errors": "~1.6.3",
+    "jquery": "^3.5.1",
     "morgan": "~1.9.1",
     "mysql": "^2.18.1",
-    "pug": "2.0.0-beta11"
+    "ngx-cookie-service": "^10.1.1",
+    "ngx-encrypt-cookie": "^1.1.2",
+    "pug": "2.0.0-beta11",
+    "save": "^2.4.0"
   }
 }

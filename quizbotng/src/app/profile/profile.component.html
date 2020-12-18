@@ -1,0 +1,29 @@
+<div *ngIf="onload">
+    <form>
+        <label for="prusername">
+            <input type="text" name="prusername" id="prusername" value="{{userbase.Username}}">
+        </label>
+        <label for="premail">
+            <input type="text" name="premail" id="premail" value="{{userbase.UserEmail}}">
+        </label>
+        <label for="prphone">
+            <input type="text" name="prphone" id="prphone" value="{{userbase.UserPhoneNumber}}">
+        </label>
+        <label for="coins">
+            <input type="text" name="coins" id="coins" value="{{userprogress.UserCoins}}">
+        </label>
+        <label for="level">
+            <input type="text" name="level" id="level" value="{{userprogress.UserLevel}}">
+        </label>
+        <label for="prquizid">
+            <input type="text" name="prquizid" id="prquizid" value="{{userprogress.Userbase_IdUser}}">
+        </label>
+    </form>
+</div>
+<div *ngIf="!onload">
+    <legend>Loading Data...</legend>
+</div>
+<div *ngIf="nouser">
+    <h5>Please log-in to save your status.</h5>
+    <button id="loginbtn" (click)="profileError()">Login</button>
+</div>

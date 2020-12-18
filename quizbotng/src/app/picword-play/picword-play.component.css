@@ -1,0 +1,24 @@
+.col-1{
+    max-width:250px;
+}
+.col-2{
+    max-width:250px;
+}
+
+[class*="col-"]{
+    float:left;
+    padding: 15px;
+    border: none;
+}
+.row::after{
+    clear:both;
+    display: table;
+}
+.wordbox{
+    margin: 5px;
+    font-size: 2em;
+    border: 1px solid white;
+    border-radius: 10%;
+    padding-left: 1em;
+    padding-right: 1em;
+}

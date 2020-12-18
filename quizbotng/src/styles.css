@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+@import './assets/css/bootstrap.min.css';
+body{
+    background-color: #000;
+    color: #fff;
+    margin: auto;
+}
+Button {
+	background-color:#000000;
+	border-radius:28px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-left: 4em;
+	padding-right: 4em;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #2f6627;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+Button:hover {
+    background-color:#ffffff;
+    color: #000;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+Button:active {
+	position:relative;
+	top:1px;
+}
+a, a:hover,a:visited, a:focus {
+    text-decoration:none;
+}
+.vertical-center {
+    min-height: 80%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 80vh; /* These two lines are counted as one :-)       */
+  
+    display: flex;
+    align-items: center;
+  }

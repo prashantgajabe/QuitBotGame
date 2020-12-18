@@ -5,8 +5,12 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var apiRouter = require('./routes/quizbotAPI');
+var usersRouter = require('./routes/userprogress.routes');
+var userbaseRouter = require('./routes/userbase.routes');
+var quizRouter = require('./routes/quiz.routes');
+var picwordRouter = require('./routes/picworddb.routes');
+var picwordlistRouter = require('./routes/picwordlist.routes');
+var mathriddlesRouter = require('./routes/mathriddles.routes');
 
 var app = express();
 
@@ -18,11 +22,16 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'quizbotng','public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-// app.use('/api', apiRouter);
+app.use('/users', userbaseRouter);
+app.use('/api/userbase', userbaseRouter);
+app.use('/api/quiz', quizRouter);
+app.use('/api/picworddb', picwordRouter);
+app.use('/api/piclist', picwordlistRouter);
+app.use('/api/mathriddle', mathriddlesRouter);
+app.use('/api/userprog', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

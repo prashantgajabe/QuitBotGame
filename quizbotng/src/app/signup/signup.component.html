@@ -1,0 +1,60 @@
+<title>QuizBot | Sign Up</title>
+<link rel="shortcut icon" href="../../assets/img/favicon.ico">
+<div class="container vertical-center">
+    <div class="container col-lg-6 col-md-10 sm-12">
+        <legend class="m-5 h1">Sign-Up</legend>
+        <form  [formGroup]="signupForm" (submit)="Validation(signupForm)">
+                <input class="form-control form-control-lg m-5" type="email" name="Email" id="Email" formControlName="UserEmail" placeholder="Email" >
+                <div *ngIf="signupForm.controls.UserEmail.invalid && (signupForm.controls.UserEmail.dirty || signupForm.controls.UserEmail.touched)" class="m-5 alert alert-danger">
+                    <div *ngIf="signupForm.controls.UserEmail.errors?.required">
+                        Please Input Email
+                    </div>
+                    <div *ngIf="signupForm.controls.UserEmail.errors?.email">
+                       Please input valid Email
+                    </div>
+                </div>
+                <input class="form-control form-control-lg m-5" type="text" name="Username" id="Username" placeholder="Username" formControlName="Username">
+                <div *ngIf="signupForm.controls.Username.invalid && (signupForm.controls.Username.dirty || signupForm.controls.Username.touched)" class="m-5 alert alert-danger">
+                    <div *ngIf="signupForm.controls.Username.errors?.required">
+                        Please Input Username
+                    </div>
+                    <div *ngIf="signupForm.controls.Username.errors?.minlength">
+                        The minimum length of the Username should be 4 Characters
+                    </div>
+                    <div *ngIf="signupForm.controls.Username.errors?.pattern">
+                        No Special Characters Allowed
+                    </div>
+                </div>
+                <input type="tel" class="form-control form-control-lg m-5" name="Phone" id="Phone" formControlName="UserPhoneNumber" placeholder="Phone">
+                <div *ngIf="signupForm.controls.UserPhoneNumber.invalid && (signupForm.controls.UserPhoneNumber.dirty || signupForm.controls.UserPhoneNumber.touched)" class="m-5 alert alert-danger">
+                    <div *ngIf="signupForm.controls.UserPhoneNumber.errors?.required">
+                        Please Input a Phone Number
+                    </div>
+                    <div *ngIf="signupForm.controls.UserPhoneNumber.errors?.pattern">
+                        No Special Characters Allowed
+                    </div>
+                </div>
+                <input type="password" class="form-control form-control-lg m-5" name="Password" id="Password" formControlName="UserPassword" placeholder="Password">
+                <div *ngIf="signupForm.controls.UserPassword.invalid && (signupForm.controls.UserPassword.dirty || signupForm.controls.UserPassword.touched)" class="m-5 alert alert-danger">
+                    <div *ngIf="signupForm.controls.UserPassword.errors?.required">
+                        Please Input a Password
+                    </div>
+                    <div *ngIf="signupForm.controls.UserPassword.errors?.minlength">
+                        Password cannot be less than 8 Characters
+                    </div>
+                </div>
+                <input type="number" class="form-control form-control-lg m-5" name="Age" id="Age" formControlName="UserAge" placeholder="Age">
+                <div *ngIf="signupForm.controls.UserAge.invalid && (signupForm.controls.UserAge.dirty || signupForm.controls.UserAge.touched)" class="m-5 alert alert-danger">
+                    <div *ngIf="signupForm.controls.UserAge.errors?.required">
+                        Please Input Proper age
+                    </div>
+                    <div *ngIf="signupForm.controls.UserAge.errors?.pattern">
+                        Age can be between 1-200
+                    </div>
+                </div>
+                <div class="d-flex flex-row quizlogohome m-5">
+                    <button type="submit" value="submit" name="signbtn">Sign-Up</button>
+                </div>
+        </form>
+    </div>
+</div>
